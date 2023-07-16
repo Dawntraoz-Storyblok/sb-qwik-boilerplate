@@ -8,5 +8,5 @@ interface TeaserProps {
   };
 }
 export default component$<TeaserProps>((props) => {
-  return <h2 {...storyblokEditable(props.blok)}>{props.blok.headline}</h2>;
+  return <h2 {...storyblokEditable(props.blok)} class="py-32 text-6xl text-[#50b0ae] font-bold text-center">{props.blok.headline}</h2>;
 });

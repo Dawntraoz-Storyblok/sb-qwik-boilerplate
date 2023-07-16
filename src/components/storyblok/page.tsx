@@ -11,7 +11,7 @@ interface PageProps {
 
 export default component$<PageProps>((props) => {
   return (
-    <main {...storyblokEditable(props.blok)}>
+    <main {...storyblokEditable(props.blok)} class="px-4">
     {props.blok.body.map((block) => {
       return (
         <StoryblokComponent blok={block} />
