@@ -34,12 +34,12 @@ export default component$(() => {
     
     storyblokInstance.on(['published', 'change'], () => {
         // reload page if save or publish is clicked
-        location.reload(true)
+        location.reload()
     })
 
     storyblokInstance.on('input', (event) => {
       // Access currently changed but not yet saved content via: 
-      story.value = event.story;
+      story.value = event?.story as ISbStoryData;
     })
   }));
   

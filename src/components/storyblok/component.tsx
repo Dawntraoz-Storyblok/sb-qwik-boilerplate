@@ -1,4 +1,5 @@
 import { component$ } from '@builder.io/qwik';
+import type { StoryblokComponentType } from "@storyblok/js";
 
 // Components
 import grid from "~/components/storyblok/grid";
@@ -7,12 +8,10 @@ import feature from "~/components/storyblok/feature";
 import page from "~/components/storyblok/page";
 
 interface Props {
-  blok: {
-    component: string;
-  };
+  blok: StoryblokComponentType<string>;
 }
 
-const Components = {
+const Components: any = {
   'sb-grid': grid,
   'sb-teaser': teaser,
   'sb-feature': feature,
