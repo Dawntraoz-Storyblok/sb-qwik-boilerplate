@@ -1,4 +1,4 @@
-import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { $, component$, useSignal, useOnWindow } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { routeLoader$ } from '@builder.io/qwik-city';
 
@@ -8,7 +8,7 @@ import StoryblokComponent from "~/components/storyblok/component";
 
 // [Start] Storyblok Initial Setup
 import type { ISbStoryData } from "@storyblok/js";
-import { storyblokInit, apiPlugin, loadStoryblokBridge, registerStoryblokBridge } from "@storyblok/js";
+import { storyblokInit, apiPlugin, loadStoryblokBridge } from "@storyblok/js";
 
 const { storyblokApi } = storyblokInit({
   accessToken: import.meta.env.PUBLIC_STORYBLOK_TOKEN,
@@ -27,20 +27,25 @@ export const useStory = routeLoader$(async () => {
 export default component$(() => {
   const story = useSignal(useStory().value);
 
-  useVisibleTask$(async () => {
+  useOnWindow('load', $(async () => {
     await loadStoryblokBridge();
-    const sbBridge = new window.StoryblokBridge();
+    const { StoryblokBridge, location } = window;
+    const storyblokInstance = new StoryblokBridge();
+    
+    storyblokInstance.on(['published', 'change'], () => {
+        // reload page if save or publish is clicked
+        location.reload(true)
+    })
 
-    sbBridge.on(["published", "change"], () => {
-      window.location.reload();
-    });
-
-    registerStoryblokBridge(story.value.id, (storySB) => (story.value = storySB));    
-  });
+    storyblokInstance.on('input', (event) => {
+      // Access currently changed but not yet saved content via: 
+      story.value = event.story;
+    })
+  }));
   
   return (
     <>
-      <StoryblokComponent blok={story.value.content} />
+      <StoryblokComponent key={story.value.id}  blok={story.value.content} />
     </>
   );
 });

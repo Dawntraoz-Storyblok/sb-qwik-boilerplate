@@ -14,7 +14,7 @@ export default component$<GridProps>((props) => {
     <div {...storyblokEditable(props.blok)} class="container mx-auto grid md:grid-cols-3 gap-12 my-12 place-items-center">
       {props.blok.columns.map((block) => {
         return (
-          <StoryblokComponent blok={block} />
+          <StoryblokComponent key={block._uid} blok={block} />
         )
       })}
     </div>

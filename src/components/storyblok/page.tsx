@@ -14,7 +14,7 @@ export default component$<PageProps>((props) => {
     <main {...storyblokEditable(props.blok)} class="px-4">
     {props.blok.body.map((block) => {
       return (
-        <StoryblokComponent blok={block} />
+        <StoryblokComponent key={block._uid} blok={block} />
       )
     })}
     </main>
