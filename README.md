@@ -1,54 +1,61 @@
-# Qwik City App ⚡️
+# Storyblok 5-minute Qwik starter
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+> This template should help get you started developing a headless app using [Storyblok JS SDK](https://github.com/storyblok/storyblok-js), Qwik in Vite.
 
----
+You can find the full writen tutorial on [Add a headless CMS with Live Preview to Qwik in 5 Minutes](https://www.storyblok.com/tp/add-a-headless-cms-with-live-preview-to-qwik-in-5-minutes).
 
-## Project Structure
+## Requirements
 
-This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
+To be able to run this project you need to have a Storyblok account. If you don't have one yet, you can register for free at [Storyblok](https://www.storyblok.com/). Did I mention it's free?.
 
-Inside your project, you'll see the following directory structure:
+## How to get started?
+
+To use this starter application, follow these steps:
+
+1. Clone this repository
+2. Install dependencies with `pnpm install`
+3. Add the preview token from your Storyblok space to the `.env` file
 
 ```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
+PUBLIC_STORYBLOK_TOKEN=W1vLyxT5rQ15jBpANjnv0gtt
 ```
 
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
+4. Run the project with `pnpm start`
+5. Open your browser and go to `https://localhost:5173/`
 
-- `src/components`: Recommended directory for components.
+## Recommended IDE Setup
 
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
+[VSCode](https://code.visualstudio.com/).
 
-## Add Integrations and deployment
+## Customize configuration
 
-Use the `pnpm qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-```shell
-pnpm qwik add # or `yarn qwik add`
+## Project Setup
+
+```sh
+pnpm install
 ```
 
-## Development
+### Compile and Hot-Reload for Development
 
 Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
 
 ```shell
-npm start # or `yarn start`
+pnpm start # or `yarn start`
 ```
 
 > Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
 
-## Preview
+## Compile and Minify Production
+
+The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
+
+```shell
+pnpm build # or `yarn build`
+```
+
+### Production build -> Preview locally
 
 The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
 
@@ -56,10 +63,8 @@ The preview command will create a production build of the client modules, a prod
 pnpm preview # or `yarn preview`
 ```
 
-## Production
+### Resources
 
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
-
-```shell
-pnpm build # or `yarn build`
-```
+- [Storyblok JS SDK](https://github.com/storyblok/storyblok-js)
+- [Qwik Docs](https://qwik.builder.io/)
+- [Add a headless CMS with Live Preview to Qwik in 5 Minutes](https://www.storyblok.com/tp/add-a-headless-cms-with-live-preview-to-qwik-in-5-minutes)

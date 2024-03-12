@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "qwik-project-name",
+  "name": "qwik-5-min-tutorial",
   "short_name": "Welcome to Qwik",
   "start_url": ".",
   "display": "standalone",

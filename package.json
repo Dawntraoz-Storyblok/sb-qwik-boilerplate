@@ -1,5 +1,5 @@
 {
-  "name": "my-qwik-empty-starter",
+  "name": "qwik-5-min-tutorial",
   "description": "App with Routing built-in ready to create your app",
   "engines": {
     "node": ">=20.0.0"
