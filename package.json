@@ -22,24 +22,25 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "^1.4.5",
-    "@builder.io/qwik-city": "^1.4.5",
-    "@types/eslint": "8.56.3",
-    "@types/node": "^20.11.20",
-    "@typescript-eslint/eslint-plugin": "7.0.2",
-    "@typescript-eslint/parser": "7.0.2",
-    "autoprefixer": "^10.4.17",
-    "eslint": "8.56.0",
-    "eslint-plugin-qwik": "^1.4.5",
+    "@builder.io/qwik": "^1.5.1",
+    "@builder.io/qwik-city": "^1.5.1",
+    "@types/eslint": "8.56.5",
+    "@types/node": "^20.11.26",
+    "@typescript-eslint/eslint-plugin": "7.2.0",
+    "@typescript-eslint/parser": "7.2.0",
+    "autoprefixer": "^10.4.18",
+    "eslint": "8.57.0",
+    "eslint-plugin-qwik": "^1.5.1",
     "postcss": "^8.4.35",
     "prettier": "3.2.5",
     "tailwindcss": "^3.4.1",
-    "typescript": "5.3.3",
-    "undici": "6.6.2",
-    "vite": "5.1.4",
+    "typescript": "5.4.2",
+    "undici": "6.7.1",
+    "vite": "5.1.6",
+    "vite-plugin-mkcert": "^1.17.4",
     "vite-tsconfig-paths": "4.3.1"
   },
   "dependencies": {
-    "@storyblok/js": "^3.0.6"
+    "@storyblok/js": "^3.0.7"
   }
 }

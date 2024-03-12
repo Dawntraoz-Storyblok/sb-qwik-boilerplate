@@ -2,17 +2,12 @@ import { defineConfig } from "vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
 import { qwikCity } from "@builder.io/qwik-city/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
-import fs from 'fs';
+
+import mkcert from'vite-plugin-mkcert';
 
 export default defineConfig(() => {
   return {
-    server: {
-      https: {
-        key: fs.readFileSync('./localhost-key.pem'),
-        cert: fs.readFileSync('./localhost.pem'),
-      }
-    },
-    plugins: [qwikCity(), qwikVite(), tsconfigPaths()],
+    plugins: [qwikCity(), qwikVite(), tsconfigPaths(), mkcert()],
     preview: {
       headers: {
         "Cache-Control": "public, max-age=600",
